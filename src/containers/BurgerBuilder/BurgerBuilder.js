@@ -8,7 +8,6 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
-import App from "../../App";
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -32,8 +31,8 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount () {
-        console.log('Component did mount.');
-        axios.get( 'https://react-my-burger-b12ca.firebaseio.com/ingredients.json' )
+        console.log(this.props);
+        axios.get( 'https://react-my-burger.firebaseio.com/ingredients.json' )
             .then( response => {
                 this.setState( { ingredients: response.data } );
             } )
@@ -93,16 +92,14 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        const queryParams = [];
+        // alert('You continue!');
 
+        const queryParams = [];
         for (let i in this.state.ingredients) {
             queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
-
         queryParams.push('price=' + this.state.totalPrice);
-
         const queryString = queryParams.join('&');
-
         this.props.history.push({
             pathname: '/checkout',
             search: '?' + queryString
