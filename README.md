@@ -7,7 +7,7 @@ Burger app is a fun website to build a tasty burger! This website was build to d
   **Languages**: JavaScript, React, Firebase, CSS, HTML, AdobeXd
 
   <p align="center">
-  <img src="screenshots/burger_builder.gif" width="80%"/>
+  <img src="screenshots/burger_builder.gif" width="40%"/>
   </p>
 
 ## Screenshots
