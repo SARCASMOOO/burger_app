@@ -22,7 +22,7 @@ Burger app is a fun website to build a tasty burger! This website was build to d
   <img src="screenshots/orders.png" width="40%"/>
   </p>
   
-  <p>
+  <p align="center">
   <img src="screenshots/sideDrawer.png" width="40%"/>
   </p>
   
